@@ -1,6 +1,3 @@
-
-
-
 import { StaticImageData } from 'next/image'
 
 
@@ -9,5 +6,10 @@ id:number
 src:StaticImageData
 name:string
 }
-
+export interface heros{
+    id:number
+    src:StaticImageData
+    name:string
+    link:string
+}
 

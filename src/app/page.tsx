@@ -1,20 +1,20 @@
-import Image from "next/image";
-import heropic from "../../public/images/images/tesla models and prodects19.jpg";
-import { Vehicles } from "@/utils/models";
+import Image from 'next/image';
+import heropic from '../../public/images/tesla models and prodects19.jpg';
+import { Heromodel, Vehicles } from '@/constants/models';
 
-
-
-export default function Home() {
-
+const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen  flex-col items-center justify-between  h-full  align-middle  ">
-      
-     <div>
-     <Image className=" w-full " alt="tesla models and prodects20" src={heropic}/>
-     
-     </div>
-     
-    
+    <main className="flex min-h-screen flex-col  justify-between h-full align-middle ">
+      {Heromodel.map((item) => (
+        <div key={item.id} className=' relative flex justify-center items-center'>
+          <Image src={item.src} alt={item.name}  objectFit="cover" className=' h-3/4 w-screen'/>
+          <div className=' flex  flex-col text-start absolute justify-center  text-white '><h1 className=' text-5xl font-semibold '>{item.name}</h1>
+          <p>starting $10000</p></div>
+                      
+        </div>
+      ))}
     </main>
   );
-}
+};
+
+export default Home;

@@ -21,7 +21,7 @@ const onToggle=(e:boolean)=>{
   
 }
   return (
-    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z01 absolute align-middle ">
+    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-10 absolute align-middle ">
       <div className=" w-28 ">
         {" "}
         <svg viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
