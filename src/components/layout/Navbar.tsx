@@ -6,7 +6,9 @@ import { CgProfile } from "react-icons/cg";
 import { CiCircleQuestion } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 
+
 import { IoIosClose } from "react-icons/io";
+
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -20,6 +22,7 @@ const onToggle=(e:boolean)=>{
   setIsHover(!isHover);
   
 }
+
   return (
     <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-10 absolute align-middle ">
       <div className=" w-28 ">
@@ -32,10 +35,11 @@ const onToggle=(e:boolean)=>{
         </svg>
       </div>
       <ul className="  space-x-3 bg-transparent font-medium text-sm xl:grid grid-cols-5 gap-4 hidden  ">
-        <li className=" hover:text-gray-600">
+        <li className=" " onMouseEnter={()=>{setIsHover(true)}}>
           <h3>Vehicles</h3>
+          <div className={` hidden ${!isHover===true? 'hidden':'flex'} bg-white`}>arshad</div>
         </li>
-        <li className=" hover:text-gray-600">
+        <li className=" hover:text-gray-600 z-20">
           
           <h3>Energy</h3>
         </li>
@@ -87,6 +91,7 @@ const onToggle=(e:boolean)=>{
         </div>
       )}
     </nav>
+     
   );
 };
 

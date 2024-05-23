@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import heropic from '../../public/images/tesla models and prodects19.jpg';
 import { Heromodel, Vehicles } from '@/constants/models';
+
 
 const Home: React.FC = () => {
   return (
@@ -9,10 +9,10 @@ const Home: React.FC = () => {
         <div key={item.id} className=' relative flex justify-center items-center'>
           <Image src={item.src} alt={item.name}  objectFit="cover" className=' h-3/4 w-screen'/>
           <div className=' flex  flex-col text-start absolute justify-center  text-white '><h1 className=' text-5xl font-semibold '>{item.name}</h1>
-          <p>starting $10000</p></div>
-                      
+          <p>starting $10000</p></div>       
         </div>
       ))}
+       
     </main>
   );
 };
