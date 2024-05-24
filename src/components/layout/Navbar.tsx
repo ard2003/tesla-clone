@@ -18,13 +18,17 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
     e.name = e.name === "menu" ? "close" : "menu";
   };
-const onToggle=(e:boolean)=>{
-  setIsHover(!isHover);
+const handleMouseEnter=()=>{
+  setIsHover(true);
+}
+const handleMouseLeave=()=>{
+  setIsHover(false);
+  
   
 }
 
   return (
-    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-10 absolute align-middle ">
+    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-20 absolute align-middle ">
       <div className=" w-28 ">
         {" "}
         <svg viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
@@ -34,13 +38,12 @@ const onToggle=(e:boolean)=>{
           ></path>
         </svg>
       </div>
-      <ul className="  space-x-3 bg-transparent font-medium text-sm xl:grid grid-cols-5 gap-4 hidden  ">
-        <li className=" " onMouseEnter={()=>{setIsHover(true)}}>
+      <ul className="  space-x-3 bg-transparent font-medium text-sm xl:grid grid-cols-5 gap-4 hidden z-30 ">
+        <li className={'hover:text-gray-600 cursor-pointer'} onMouseDownCapture={handleMouseEnter} >
           <h3>Vehicles</h3>
-          <div className={` hidden ${!isHover===true? 'hidden':'flex'} bg-white`}>arshad</div>
+          {isHover&&(<div className='w-screen   bg-white z-10 absolute h-screen'>arshad</div>)}
         </li>
-        <li className=" hover:text-gray-600 z-20">
-          
+        <li className=" hover:text-gray-600 ">
           <h3>Energy</h3>
         </li>
         <li className=" hover:text-gray-600" >

@@ -9,7 +9,13 @@ name:string
 export interface heros{
     id:number
     src:StaticImageData
-    name:string
+    name?:string
     link:string
+    color:string
+    font?:StaticImageData|string
+    alt:string
+    check:boolean
+    price?:string
+   
 }
 
