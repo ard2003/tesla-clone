@@ -16,7 +16,8 @@ import heropw from"@/public/images/images/tesla models and prodects26.jpg";
 import heroacc from"@/public/images/images/tesla models and prodects27.jpg";
 import cybfont from "@/public/images/images/256px-Cybertrucklogo.svg.png"
 
-import { heros, models } from "@/types/items";
+import { heros, models, navItems } from "@/types/items";
+import { title } from "process";
 
 export const Vehicles: models[] = [
   { id: 1, src: ms, name: "model-s" },
@@ -37,4 +38,23 @@ export const Heromodel:heros[]=[
    {id:8,src:heropw, name:'Powerwall', link:'#' ,color:'black',alt:'powerwall',check:true},
    {id:9,src:heroacc, name:'Accessories', link:'#' ,color:'black',alt:'accessories',check:true},
 
+]
+export const NavbarItems:navItems[]=[
+
+  {title:'Vehicle',id:1,items:[
+    { id: 1, src: ms, name: "model-s" },
+  { id: 2, src: m3, name: "model-3" },
+  { id: 3, src: mx, name: "model-x" },
+  { id: 4, src: my, name: "model-y" },
+  { id: 5, src: ct, name: "Cybertruck" },
+  { id: 6, src: hc, name: "Help Me choose" },
+  ]},
+  {title:'Energy',id:2,items:[
+    { id: 1, src: ms, name: "solar" },
+  { id: 2, src: m3, name: "model-3" },
+  { id: 3, src: mx, name: "model-x" },
+  { id: 4, src: my, name: "model-y" },
+  { id: 5, src: ct, name: "Cybertruck" },
+  { id: 6, src: hc, name: "Help Me choose" },
+  ]}
 ]

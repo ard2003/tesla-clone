@@ -1,11 +1,16 @@
+"use client";
 import Image from 'next/image';
-import { Heromodel, Vehicles } from '@/constants/models';
+import { Heromodel} from '@/constants/models';
 import Link from 'next/link';
+import { useAppContext } from '@/context';
 
 
 const Home: React.FC = () => {
+
+  const [isHover,setIsHover]=useAppContext()
+  
   return (
-    <main className="flex min-h-screen flex-col  justify-between h-full align-middle ">
+    <main className={`flex min-h-screen flex-col  justify-between h-full align-middle ${isHover&&('blur-sm')}`}>
       {Heromodel.map((item) => (
         <div key={item.id} className=' relative flex justify-center '>
           <Image src={item.src} alt={item.alt}  objectFit="cover"  layout="responsive" className=' h-full w-screen'/>

@@ -18,4 +18,9 @@ export interface heros{
     price?:string
    
 }
+export interface navItems{
+    title:string
+    id:number
+    items:models[]
+}
 

@@ -1,18 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { CiCircleQuestion } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 
 
 import { IoIosClose } from "react-icons/io";
+import { Vehicles } from "@/constants/models";
+import Image from "next/image";
+import { useAppContext } from "@/context";
 
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isHover,setIsHover]=useState<boolean>(false)
+  const [isHover,setIsHover]=useAppContext()
 
   const onToggleMenu = (e: any) => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,21 +30,24 @@ const handleMouseLeave=()=>{
   
 }
 
+
   return (
-    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-20 absolute align-middle ">
+    <>
+    <nav className=" w-full h-auto bg-transparent  flex justify-between py-5 px-5 z-20 absolute  ">
       <div className=" w-28 ">
-        {" "}
+      
         <svg viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"
             fill="currentColor"
+            className=""
           ></path>
         </svg>
       </div>
       <ul className="  space-x-3 bg-transparent font-medium text-sm xl:grid grid-cols-5 gap-4 hidden z-30 ">
-        <li className={'hover:text-gray-600 cursor-pointer'} onMouseDownCapture={handleMouseEnter} >
+        <li className={' hover:bg-gray-300 rounded-sm cursor-pointer text-center '} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <h3>Vehicles</h3>
-          {isHover&&(<div className='w-screen   bg-white z-10 absolute h-screen'>arshad</div>)}
+          
         </li>
         <li className=" hover:text-gray-600 ">
           <h3>Energy</h3>
@@ -56,6 +62,7 @@ const handleMouseLeave=()=>{
           <h3>Shop</h3>
         </li>
       </ul>
+      
       <div className="xl:flex flex-wrap space-x-3 font-light hidden ">
         <div>
           <TbWorld className=" text-2xl " />
@@ -93,7 +100,17 @@ const handleMouseLeave=()=>{
         </div>
         </div>
       )}
+      
     </nav>
+    {isHover&&(<div className='w-full   bg-white z-10 absolute   p-14   h-auto flex flex-row  rounded-b-md'>
+      <div className="  w-3/4 flex justify-start flex-wrap  ">
+        <h4 className=" font-semibold text-base">Vehicles</h4>
+        {Vehicles.map((items)=>(
+          <div key={items.id} className=" flex flex-wrap p-5"><Image src={items.src} alt={items.name} width={200}/></div>
+        ))}</div><div className=" bg-yellow-500 w-1/4">hey guyz</div>
+    </div>)}
+
+    </>
      
   );
 };

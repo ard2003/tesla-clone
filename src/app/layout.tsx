@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import { Inter,Open_Sans } from "next/font/google";
 import "../styles/globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AppWrapper } from "@/context";
 
 const inter = Inter({ subsets: ["latin"] });
 const sance=Open_Sans({subsets : ['cyrillic']})
@@ -19,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={sance.className}>
-        <Navbar/>{children}<Footer/></body>
+      <body className={sance.className}><AppWrapper>
+        <Navbar/>{children}<Footer/>
+        </AppWrapper></body>
     </html>
   );
 }
