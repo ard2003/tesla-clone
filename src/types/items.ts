@@ -1,5 +1,7 @@
 import { StaticImageData } from 'next/image'
-
+export interface addition{
+    title:string
+}
 
 export interface models {
 id:number
@@ -22,5 +24,6 @@ export interface navItems{
     title:string
     id:number
     items:models[]
+    additonal:addition[]
 }
 
