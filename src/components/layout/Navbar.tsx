@@ -137,7 +137,11 @@ const Navbar: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <div className="bg-yellow-500 w-1/4">hey guyz</div>
+                
+                  <div  className=" w-1/4 ">{item.additonal.map((dtls)=>(
+                    <div key={dtls.id} className=" flex flex-col text-base font-medium  space-y-4"><h4 >{dtls.title}</h4></div> ))}
+                  </div>
+               
               </div>
             )
         )}

@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image'
 export interface addition{
+    id:number
     title:string
 }
 
@@ -18,6 +19,7 @@ export interface heros{
     alt:string
     check:boolean
     price?:string
+   
    
 }
 export interface navItems{
